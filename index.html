@@ -2,38 +2,91 @@
 <html>
 
 <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles">
+    <title>Lauren's Catalog Website | Home</title>
+    <meta name="description" content="A Catalog of Minecraft Skins">
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
+    <!-- <script type="text/javascript" src="scripts.js"></script> -->
 </head>
 
 <body>
     <header class="main-header">
-        <h1 class="title">LA TV Shows</h1>
+        <h1 class="title">Minecraft Skins <3</h1>
     </header>
-    <div id="card-container">
-        
+
+    <!-- filter & sort! -->
+    <div id="controls">
+
+        <!-- species -->
+        <select id="filterSpecies">
+            <option value="All">All Species</option>
+            <option value="Human">Human</option>
+            <option value="Animal">Animal</option>
+            <option value="Devil">Devil</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <!-- color -->
+        <select id="filterColor">
+            <option value="All">All Colors</option>
+            <option value="Red">Red</option>
+            <option value="Orange">Orange</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Green">Green</option>
+            <option value="Blue">Blue</option>
+            <option value="Purple">Purple</option>
+            <option value="Pink">Pink</option>
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Gray">Gray</option>
+        </select>
+
+        <!-- franchise -->
+        <select id="filterFranchise">
+            <option value="All">All Franchises</option>
+            <option value="Sanrio">Sanrio</option>
+            <option value="Minecraft">Minecraft</option>
+            <option value="Pokemon">Pokemon</option>
+            <option value="Chainsaw Man">Chainsaw Man</option>
+            <option value="Death Note">Death Note</option>
+            <option value="None">None</option>
+        </select>
+
+        <!-- sort -->
+        <select id="sortOrder">
+            <option value="Ascending">Name Ascending</option>
+            <option value="Descending">Name Descending</option>
+        </select>
+
+        <!-- apply filters -->
+        <button onclick="applyFilters()">Apply Filters</button>
     </div>
+
+    <div id="card-container">
+    </div>
+
     <div class="card" style="display: none;">
         <div class="card-content">
-            <h2>TV Show Title</h2>
-            <img src="" alt="TV Show Poster">
-            <ul>
-                <li>Bullet Point 1</li>
-                <li>Bullet Point 2</li>
-                <li>Bullet Point 3</li>
-            </ul>
+            <h2>Skin name</h2>
+            <img src="" alt="Skin Image">
+            <p class="species">Species</p>
+            <p class="color">Colors</p>
+            <p class="franchise">Franchise</p>
         </div>
     </div>
+
     <div class="footer">
         <button onclick="quoteAlert();">
-            Get A Quote!
+            Get a skin!
         </button>
         <button onclick="removeLastCard();">
-            Remove A Card!
+            Remove a skin!
+        </button>
+        <button onclick="addNewCard();"> <!-- new button -->
+            Add a skin!
         </button>
     </div>
+
+    <script src="scripts.js"></script>
 </body>
 
 </html>
