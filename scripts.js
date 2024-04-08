@@ -43,6 +43,13 @@ const skins = [
         // tags: ["pink", "cute", "bunny"]
     },
     {
+        name: "Larry David",
+        imageUrl: "https://www.minecraftskins.com/uploads/preview-skins/2021/02/20/larry-david-16840309.png?v627",
+        species: "Human",
+        color: ["Blue", "Brown", "Gray"],
+        franchise: "None",
+    },
+    {
         name: "Steve",
         imageUrl: "https://www.minecraftskins.com/uploads/preview-skins/2023/11/12/av-steve-22110502.png?v626",
         species: "Human",
@@ -205,6 +212,13 @@ const skins = [
         franchise: "Sanrio",
     },
     {
+        name: "Patrick Star",
+        imageUrl: "https://www.minecraftskins.com/uploads/preview-skins/2023/12/06/patrick-22164445.png?v627",
+        species: "Animal",
+        color: ["Pink", "Green", "Brown"],
+        franchise: "Spongebob",
+    },
+    {
         name: "Batman",
         imageUrl: "https://www.minecraftskins.com/uploads/preview-skins/2024/03/24/hello-kitty-batman-22423427.png?v626",
         species: ["Human", "Other"],
@@ -247,6 +261,13 @@ const skins = [
         franchise: "Sanrio",
     },
     {
+        name: "Spongebob Squarepants",
+        imageUrl: "https://www.minecraftskins.com/uploads/preview-skins/2023/10/18/spongebob-22053198.png?v627",
+        species: "Other",
+        color: ["Yellow", "Brown", "Red", "White"],
+        franchise: "Spongebob",
+    },
+    {
         name: "Chainsaw Man",
         imageUrl: "https://www.minecraftskins.com/uploads/preview-skins/2023/10/01/denji--blood----chainsaw-man--dont-repload--22014150.png?v626",
         species: "Devil",
@@ -280,6 +301,34 @@ const skins = [
         species: "Other",
         color: ["Gray", "Red"],
         franchise: "Minecraft",
+    },
+    {
+        name: "Jonah Hill (Superbad)",
+        imageUrl: "https://www.minecraftskins.com/uploads/preview-skins/2021/06/11/jonah-hill--superbad-18089748.png?v627",
+        species: "Human",
+        color: ["Blue", "Brown", "White"],
+        franchise: "None",
+    },
+    {
+        name: "Squidward Tentacles",
+        imageUrl: "https://www.minecraftskins.com/uploads/preview-skins/2023/11/26/squidward--he---s-cool-22140475.png?v627",
+        species: "Animal",
+        color: ["Blue", "Brown"],
+        franchise: "Spongebob",
+    },
+    {
+        name: "Mr Krabs",
+        imageUrl: "https://www.minecraftskins.com/uploads/preview-skins/2023/06/02/mr-krabs-21654024.png?v627",
+        species: "Animal",
+        color: ["Blue", "Purple", "Red"],
+        franchise: "Spongebob",
+    },
+    {
+        name: "Teddy Bear",
+        imageUrl: "https://www.minecraftskins.com/uploads/preview-skins/2024/01/13/-*--ted-e--bear-22255364.png?v627",
+        species: "Animal",
+        color: ["Brown", "Red"],
+        franchise: "None",
     },
 ];
 
