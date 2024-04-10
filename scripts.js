@@ -330,6 +330,20 @@ const skins = [
         color: ["Brown", "Red"],
         franchise: "None",
     },
+    {
+        name: "Lana Del Rey",
+        imageUrl: "https://www.minecraftskins.com/uploads/preview-skins/2023/12/30/lana-del-rey-lust-for-life-22221196.png?v627",
+        species: "Human",
+        color: ["Brown", "White"],
+        franchise: "None",
+    },
+    {
+        name: "Donald Trump",
+        imageUrl: "https://www.minecraftskins.com/uploads/preview-skins/2023/11/26/donald-trump-22140108.png?v627",
+        species: "Human",
+        color: ["Orange", "Black"],
+        franchise: "None",
+    },
 ];
 
 // This calls the addCards() function when the page is first loaded
@@ -396,20 +410,6 @@ function editCardContent(card, skin)
     card.style.display = "block";
 }
 
-// not done yet
-function quoteAlert() 
-{
-    console.log("Button Clicked!")
-    // alert("I guess I can kiss heaven goodbye, because it got to be a sin to look this good!");
-}
-
-// not done yet
-function removeLastCard() 
-{
-    titles.pop(); // Remove last item in titles array
-    showCards(); // Call showCards again to refresh
-}
-
 // filter and sort skins (dropdown menu)
 function applyFilters() 
 {
@@ -459,3 +459,87 @@ function applyFilters()
     showCards(filteredSkins); // show the new skins
 }
 
+// for search bar so that it allows certain typos
+// checks if the letters are in order of the names (ex. helok -> hello kitty)
+function fuzzySearch(source, target) 
+{
+    const sourceLower = source.toLowerCase();
+    const targetLower = target.toLowerCase();
+    let targetIndex = 0;
+
+    for (let i = 0; i < sourceLower.length; i++) 
+    {
+        if (sourceLower[i] === targetLower[targetIndex]) 
+        {
+            targetIndex++;
+            if (targetIndex === targetLower.length) 
+            {
+                return true; 
+            }
+        }
+    }
+    return false; 
+}
+
+// search bar (names only)
+function searchSkins() 
+{
+    const searchText = document.getElementById('searchBar').value;
+    const filteredSkins = skins.filter(skin => fuzzySearch(skin.name, searchText));
+    console.log("Filtered skins:", filteredSkins); // <- for me
+    showCards(filteredSkins);
+}
+
+// menu display options:
+function toggleMenu() 
+{
+    var navbar = document.getElementById("navbar");
+    if (navbar.classList.contains("hidden")) 
+        navbar.classList.remove("hidden");
+    else 
+        navbar.classList.add("hidden");
+}
+
+// guides page:
+const API_KEY = 'AIzaSyDp9NUR0JIL6wnq2VjYuVBNFlQ418MigG0';
+const CHANNEL_ID = 'DESIRED_CHANNEL_ID'; // The YouTube channel ID you want to load videos from
+const API_URL = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=5`;
+
+document.addEventListener('DOMContentLoaded', loadVideos);
+
+function loadVideos() {
+    fetch(API_URL)
+        .then(response => response.json())
+        .then(data => {
+            const videos = data.items;
+            const container = document.getElementById('video-container');
+            videos.forEach(video => {
+                const videoId = video.id.videoId;
+                const videoFrame = document.createElement('iframe');
+                videoFrame.setAttribute('src', `https://www.youtube.com/embed/${videoId}`);
+                videoFrame.setAttribute('width', '560');
+                videoFrame.setAttribute('height', '315');
+                videoFrame.setAttribute('frameborder', '0');
+                videoFrame.setAttribute('allow', 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture');
+                videoFrame.setAttribute('allowfullscreen', true);
+                container.appendChild(videoFrame);
+            });
+        })
+        .catch(error => console.error('Error loading YouTube videos:', error));
+}
+
+// download skin tutorial dropdown thing
+document.getElementById('toggleTutorial').addEventListener('click', function() 
+{
+    var tutorialContainer = document.getElementById('tutorialContainer');
+    
+    if (tutorialContainer.classList.contains('tutorial-hidden')) 
+    {
+        tutorialContainer.classList.remove('tutorial-hidden');
+        tutorialContainer.classList.add('tutorial-visible');
+    } else 
+    {
+        tutorialContainer.classList.remove('tutorial-visible');
+        tutorialContainer.classList.add('tutorial-hidden');
+    }
+});

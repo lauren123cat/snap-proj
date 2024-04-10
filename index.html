@@ -5,11 +5,7 @@
     <title>Lauren's Catalog Website | Home</title>
     <meta name="description" content="A Catalog of Minecraft Skins">
     <link rel="stylesheet" href="style.css" />
-    <!-- Libre Baskerville:
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
-    -->
+    <!-- font: -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -18,6 +14,23 @@
 <body>
     <header class="main-header">
         <h1 class="title">Minecraft Skins <3</h1>
+
+        <!-- download skin tutorial -->
+        <!-- used a youtube API (API key: AIzaSyDp9NUR0JIL6wnq2VjYuVBNFlQ418MigG0)-->
+        <button id="toggleTutorial">Download Skin Tutorial</button>
+        <div id="tutorialContainer" class="tutorial-hidden">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/rppJHyszBV8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- menu options: -->
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav id="navbar" class="hidden">
+            <ul>
+                <li><a href="index.html">Home</a></li> <!-- homepage (with all the skins)-->
+                <li><a href="https://shop.minecraft.net/" target="_blank" onclick="toggleMenu()">Merchandise</a></li> <!-- sends you to minecraft's official merch page-->
+                <li><a href="https://discord.com/invite/minecraft" target="_blank" onclick="toggleMenu()">Discord Server</a></li> <!-- sends you to minecraft's discord-->
+            </ul>
+        </nav>
     </header>
 
     <!-- filter & sort! -->
@@ -67,6 +80,11 @@
 
         <!-- apply filters -->
         <button onclick="applyFilters()">Apply Filters</button>
+
+        <div id="search-container">
+            <input type="text" id="searchBar" placeholder="Search skins..." onkeyup="searchSkins()">
+            <!-- <button onclick="searchSkins()">Search Skins</button> -->
+        </div>
     </div>
 
     <div id="card-container">
@@ -82,17 +100,7 @@
         </div>
     </div>
 
-    <div class="footer">
-        <button onclick="quoteAlert();">
-            Get a skin!
-        </button>
-        <button onclick="removeLastCard();">
-            Remove a skin!
-        </button>
-        <button onclick="addNewCard();"> <!-- new button -->
-            Add a skin!
-        </button>
-    </div>
+    <div class="footer"></div> <!-- more blue background on bottom -->
 
     <script src="scripts.js"></script>
 </body>
