@@ -1,6 +1,6 @@
 # Minecraft Skins Catalog
 
-This catalog website is the ultimate resource for discovering unique and creative Minecraft skins. We offer a variety of skins, including animals, characters from well-known franchises, celebrities, and many more.
+This catalog website is the ultimate resource for discovering unique and creative Minecraft skins, using HTML, CSS, and Javascript. We offer a variety of skins, including animals, characters from well-known franchises, celebrities, and many more.
 
 ## Features
 
